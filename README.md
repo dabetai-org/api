@@ -1,18 +1,18 @@
-# dabetai API - Backend Principal
+# Dabetai API — <span id="en2">EN</span> · <a href="#es_api">ES</a>
 
-API REST para la plataforma de monitoreo de diabetes que conecta pacientes, médicos y modelos de inteligencia artificial.
+RESTful backend API for the Dabetai diabetes monitoring platform, connecting patients, healthcare professionals, and AI prediction models.
 
 <p align="center">
-  <img src="https://img.shields.io/badge/NestJS-11.x-red?logo=nestjs" alt="NestJS version">
-  <img src="https://img.shields.io/badge/TypeScript-5.x-blue?logo=typescript" alt="TypeScript version">
-  <img src="https://img.shields.io/badge/Prisma-6.x-2D3748?logo=prisma" alt="Prisma version">
-  <img src="https://img.shields.io/badge/PostgreSQL-16-blue?logo=postgresql" alt="PostgreSQL version">
-  <img src="https://img.shields.io/badge/JWT-Auth-green?logo=jsonwebtokens" alt="JWT Authentication">
+  <img src="https://img.shields.io/badge/NestJS-11.x-red?logo=nestjs" alt="NestJS">
+  <img src="https://img.shields.io/badge/TypeScript-5.x-blue?logo=typescript" alt="TypeScript">
+  <img src="https://img.shields.io/badge/Prisma-6.x-2D3748?logo=prisma" alt="Prisma">
+  <img src="https://img.shields.io/badge/PostgreSQL-16-blue?logo=postgresql" alt="PostgreSQL">
+  <img src="https://img.shields.io/badge/JWT-Auth-green?logo=jsonwebtokens" alt="JWT">
 </p>
 
-## � Documentación de la API
+## API Documentation
 
-La API incluye documentación automática con Swagger UI y Scalar:
+Interactive API docs available via Swagger UI and Scalar:
 
 - **Swagger UI**: `http://localhost:3000/api/docs`
 - **Scalar UI**: `http://localhost:3000/api/scalar`
@@ -22,130 +22,111 @@ La API incluye documentación automática con Swagger UI y Scalar:
   <img src="./assets/scalar-preview.png" alt="Scalar UI" width="400"/>
 </p>
 
-## 🏥 ¿Qué es dabetai API?
+## What is Dabetai API?
 
-**dabetai API** es el backend central de la plataforma integral para el monitoreo de diabetes que incluye:
-
-- **API REST** (esta): backend principal para todos los servicios
-- **App móvil**: para pacientes, monitoreo y predicciones
-- **App web**: para médicos, seguimiento de pacientes
-- **API de IA**: predicción de complicaciones diabéticas
-
-La API maneja la autenticación, gestión de usuarios (pacientes y médicos), almacenamiento de datos médicos y comunicación con los modelos de IA para **retinopatía, nefropatía, neuropatía y pie diabético**.
+**Dabetai API** is the central backend of the Dabetai platform. It handles authentication, user management (patients and healthcare professionals), medical data storage, and communication with AI models for predicting diabetic complications (retinopathy, nephropathy, neuropathy, and diabetic foot).
 
 ---
 
-## ✨ Funcionalidades
+## Features
 
-🔐 **Autenticación JWT** - registro y login de usuarios con roles (paciente, médico, admin)  
-� **Gestión de usuarios** - CRUD completo para pacientes y médicos  
-� **Datos médicos** - almacenamiento de información de diabetes y comorbilidades  
-� **Registro en 2 pasos** - cuenta básica + completar perfil médico  
-� **Documentación automática** - Swagger UI y Scalar para testing de APIs  
-🛡️ **Seguridad robusta** - hash de contraseñas, validación de datos y tokens seguros  
-�️ **Base de datos relacional** - PostgreSQL con Prisma ORM  
-📈 **Estadísticas** - endpoints para métricas de pacientes y médicos
-
----
-
-## 🛠 Tecnologías
-
-- **NestJS** - Framework backend escalable y modular
-- **TypeScript** - Tipado estático para mayor robustez
-- **Prisma ORM** - Gestión de base de datos type-safe
-- **PostgreSQL** - Base de datos relacional
-- **JWT** - Autenticación con tokens seguros
-- **Swagger/OpenAPI** - Documentación automática de APIs
-- **bcrypt** - Hash seguro de contraseñas
-- **class-validator** - Validación de datos de entrada
+- **JWT authentication** — Registration and login with role-based access (patient, doctor, admin)
+- **User management** — Full CRUD for patients and healthcare professionals
+- **Medical data** — Storage for diabetes and comorbidity information
+- **2-step registration** — Basic account + medical profile completion
+- **Auto-generated docs** — Swagger UI and Scalar for API testing
+- **Security** — Password hashing, data validation, secure tokens
+- **Relational database** — PostgreSQL with Prisma ORM
+- **Statistics** — Endpoints for patient and doctor metrics
 
 ---
 
-## ⚡ Instalación rápida
+## Tech Stack
 
-### Prerrequisitos
+- **NestJS** — Scalable, modular backend framework
+- **TypeScript** — Static typing for robustness
+- **Prisma ORM** — Type-safe database management
+- **PostgreSQL** — Relational database
+- **JWT** — Secure token-based authentication
+- **Swagger/OpenAPI** — Automatic API documentation
+- **bcrypt** — Secure password hashing
+- **class-validator** — Input validation
 
-- **Node.js** (v18 o superior)
-- **PostgreSQL** (v14 o superior)
-- **npm** o **yarn**
+---
 
-### Pasos
+## Quick Start
 
-1. **Clonar repositorio**
+### Prerequisites
+
+- Node.js (v18+)
+- PostgreSQL (v14+)
+- npm or yarn
+
+### Steps
 
 ```bash
-git clone https://github.com/chrisdev-ts/dabetai-api.git
-cd dabetai-api
-```
-
-2. **Instalar dependencias**
-
-```bash
+git clone https://github.com/dabetai-org/api.git
+cd api
 npm install
 ```
 
-3. **Configurar base de datos**
-   Crea `.env` en la raíz:
+Create `.env`:
 
 ```env
-DATABASE_URL="postgresql://usuario:contraseña@localhost:5432/dabetai_db"
-JWT_SECRET="tu_jwt_secret_super_seguro"
+DATABASE_URL="postgresql://user:password@localhost:5432/dabetai_db"
+JWT_SECRET="your_secure_jwt_secret"
 NODE_ENV="development"
 ```
 
-4. **Ejecutar migraciones de Prisma**
+Run migrations:
 
 ```bash
 npx prisma migrate dev
 npx prisma generate
 ```
 
-5. **Iniciar servidor**
+Start server:
 
 ```bash
 npm run start:dev
 ```
 
-La API estará disponible en `http://localhost:3000`
-
-### 📚 Acceder a la documentación
-
-- **Swagger UI**: `http://localhost:3000/api/docs`
-- **Scalar UI**: `http://localhost:3000/api/scalar`
+API available at `http://localhost:3000`
 
 ---
 
-## 🏗 Ecosistema dabetai: nuestros repositorios
+## Ecosystem
 
-dabetai está compuesto por múltiples repositorios especializados:
-
-| Repositorio                                                             | Propósito                   | Estado           |
-| ----------------------------------------------------------------------- | --------------------------- | ---------------- |
-| **[dabetai-mobileapp](https://github.com/Fermin-Cardenas/dabetai-mobileapp)** | App para pacientes          | ✅ En desarrollo |
-| **[dabetai-webapp](https://github.com/chrisdev-ts/dabetai-webapp)**     | App web para médicos        | ✅ En desarrollo |
-| **[dabetai-aiapi](https://github.com/aleor25/dabetai-aiapi)**           | API de IA y predicciones    | ✅ En desarrollo |
-| **[dabetai-aimodels](https://github.com/chrisdev-ts/dabetai-aimodels)** | Modelos de machine learning | ✅ En desarrollo |
-| **[dabetai-landing](https://github.com/chrisdev-ts/dabetai-landing)**   | Página de aterrizaje        | ✅ En desarrollo |
-| **dabetai-api**                                                         | API principal del backend   | ✅ En desarrollo |
+| Repository | Purpose | Status |
+|---|---|---|
+| [mobile-app](https://github.com/dabetai-org/mobile-app) | Patient mobile app | Active |
+| [web-app](https://github.com/dabetai-org/web-app) | Doctor web app | Active |
+| [api](https://github.com/dabetai-org/api) | Main backend API | Active |
+| [ai-api](https://github.com/dabetai-org/ai-api) | AI prediction API | Active |
+| [ai-models](https://github.com/dabetai-org/ai-models) | ML models | Active |
+| [landing](https://github.com/dabetai-org/landing) | Landing page | Active |
 
 ---
 
-## 🤝 Colaboración interna
+## Contributing
 
-Seguimos convenciones específicas para mantener consistencia - consulta [CONTRIBUTING.MD](CONTRIBUTING.MD).
+See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-## 🤝 Reconocimientos
+---
 
-Este proyecto fue desarrollado por el equipo de autores:
+## Acknowledgments
 
-- Cardenas Cabal Fermín  
-- Ortiz Pérez Alejandro  
-- Serrano Puertos Jorge Christian  
+Developed by:
 
-Con la asesoría y guía conceptual de:
+- Cardenas Cabal Fermín
+- Ortiz Pérez Alejandro
+- Serrano Puertos Jorge Christian
 
-- Guarneros Nolasco Luis Rolando  
-- Cruz Ramos Nancy Aracely  
+Advisors:
 
-Y con el apoyo académico de la  
+- Guarneros Nolasco Luis Rolando
+- Cruz Ramos Nancy Aracely
+
+Academic support:
+
 - Universidad Tecnológica del Centro de Veracruz
