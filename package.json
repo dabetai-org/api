@@ -1,8 +1,8 @@
 {
   "name": "dabetai-api",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "dabetai REST API - Main backend service for the dabetai platform",
+  "author": "Christian Serrano Puertos",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
@@ -56,7 +56,7 @@
     "@types/supertest": "^6.0.2",
     "eslint": "^9.18.0",
     "eslint-config-prettier": "^10.0.1",
-    "eslint-plugin-prettier": "^5.2.2",
+    "eslint-plugin-prettier": "^10.0.2",
     "globals": "^16.0.0",
     "jest": "^30.0.0",
     "prettier": "^3.4.2",
@@ -76,9 +76,9 @@
       "ts"
     ],
     "rootDir": "src",
-    "testRegex": ".*\\.spec\\.ts$",
+    "testRegex": ".*\.spec\.ts$",
     "transform": {
-      "^.+\\.(t|j)s$": "ts-jest"
+      "^.+\.(t|j)s$": "ts-jest"
     },
     "collectCoverageFrom": [
       "**/*.(t|j)s"
